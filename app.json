@@ -1,0 +1,251 @@
+{
+  "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
+  "id": "org.cflat-inc.telemetryCollector",
+  "version": "0.0.0",
+  "compatibility": ">=12.3.0",
+  "sdk": 3,
+  "platforms": [
+    "local"
+  ],
+  "name": {
+    "en": "Telemetry Collector"
+  },
+  "description": {
+    "en": "Setup and collect telemetry in minutes!"
+  },
+  "category": [
+    "tools"
+  ],
+  "permissions": [
+    "homey:manager:api",
+    "homey:app:org.cflat-inc.telemetryCollector",
+    "homey:app:nl.nielsdeklerk.log"
+  ],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png",
+    "xlarge": "/assets/images/xlarge.png"
+  },
+  "author": {
+    "name": "Chris Gross",
+    "email": "cghome@gmx.net"
+  },
+  "api": {
+    "addLog": {
+      "method": "PUT",
+      "path": "/addlog/"
+    }
+  },
+  "drivers": [
+    {
+      "name": {
+        "en": "Grafana Loki Adapte"
+      },
+      "class": "service",
+      "capabilities": [],
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "lan"
+      ],
+      "images": {
+        "small": "/drivers/lokiAdapter/assets/images/small.png",
+        "large": "/drivers/lokiAdapter/assets/images/large.png",
+        "xlarge": "/drivers/lokiAdapter/assets/images/xlarge.png"
+      },
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          },
+          "options": {
+            "singular": true
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "settings": [
+        {
+          "id": "endpoint",
+          "type": "text",
+          "label": {
+            "en": "Endpoint"
+          },
+          "value": "",
+          "placeholder": "192.168.1.100",
+          "hint": {
+            "en": "The IP address of the service."
+          }
+        },
+        {
+          "id": "port",
+          "type": "number",
+          "label": {
+            "en": "Port"
+          },
+          "min": 1,
+          "max": 65536,
+          "step": 1,
+          "value": 3100,
+          "hint": {
+            "en": "The Port number of the service."
+          }
+        }
+      ],
+      "id": "lokiAdapter"
+    },
+    {
+      "name": {
+        "en": "SimpleSysLog Adapter"
+      },
+      "class": "service",
+      "capabilities": [],
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "lan"
+      ],
+      "images": {
+        "small": "/drivers/simpleLogAdapter/assets/images/small.png",
+        "large": "/drivers/simpleLogAdapter/assets/images/large.png",
+        "xlarge": "/drivers/simpleLogAdapter/assets/images/xlarge.png"
+      },
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          },
+          "options": {
+            "singular": true
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "settings": [
+        {
+          "id": "autoDeactivateDebugLog",
+          "type": "checkbox",
+          "label": {
+            "en": "Automatically deactivate debug-log on startup"
+          },
+          "value": true
+        },
+        {
+          "id": "debugLogActivated",
+          "type": "checkbox",
+          "label": {
+            "en": "Debug-log activated"
+          },
+          "value": false
+        }
+      ],
+      "id": "simpleLogAdapter"
+    },
+    {
+      "name": {
+        "en": "Syslog-Adapter"
+      },
+      "class": "service",
+      "capabilities": [],
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "lan"
+      ],
+      "images": {
+        "small": "/drivers/syslogAdapter/assets/images/small.png",
+        "large": "/drivers/syslogAdapter/assets/images/large.png",
+        "xlarge": "/drivers/syslogAdapter/assets/images/xlarge.png"
+      },
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          },
+          "options": {
+            "singular": true
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "settings": [
+        {
+          "id": "endpoint",
+          "type": "text",
+          "label": {
+            "en": "Endpoint"
+          },
+          "value": "",
+          "placeholder": "192.168.1.100",
+          "hint": {
+            "en": "The IP address of the service."
+          }
+        },
+        {
+          "id": "port",
+          "type": "number",
+          "label": {
+            "en": "Port"
+          },
+          "min": 1,
+          "max": 65536,
+          "step": 1,
+          "value": 514,
+          "hint": {
+            "en": "The Port number of the service."
+          }
+        },
+        {
+          "id": "transport",
+          "type": "dropdown",
+          "label": {
+            "en": "Transport mode"
+          },
+          "value": "tcp",
+          "placeholder": "",
+          "values": [
+            {
+              "id": "tcp",
+              "label": {
+                "en": "tcp"
+              }
+            },
+            {
+              "id": "udp",
+              "label": {
+                "en": "udp"
+              }
+            }
+          ]
+        },
+        {
+          "id": "useRfc3164",
+          "type": "checkbox",
+          "label": {
+            "en": "Use RFC-3164 (Obsolete)"
+          },
+          "value": false
+        }
+      ],
+      "id": "syslogAdapter"
+    }
+  ]
+}
