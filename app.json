@@ -1,6 +1,6 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
-  "id": "org.cflat-inc.telemetryCollector",
+  "id": "org.cflat-inc.telemetrycollector",
   "version": "0.0.0",
   "compatibility": ">=12.3.0",
   "sdk": 3,
@@ -39,7 +39,7 @@
   "drivers": [
     {
       "name": {
-        "en": "Grafana Loki Adapte"
+        "en": "Grafana Loki Adapter"
       },
       "class": "service",
       "capabilities": [],
@@ -155,7 +155,7 @@
     },
     {
       "name": {
-        "en": "Syslog-Adapter"
+        "en": "Syslog Adapter"
       },
       "class": "service",
       "capabilities": [],

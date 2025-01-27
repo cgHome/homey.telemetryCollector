@@ -1,29 +1,28 @@
-'use strict'
+'use strict';
 
-const Homey = require('homey')
+const Homey = require('homey');
 
-const { TelemetryCollectorApi } = require('homey-telemetrycollector-api')
+const { TelemetryCollectorApi } = require('homey-telemetrycollector-api');
 
 module.exports = class BaseDevice extends TelemetryCollectorApi(Homey.Device) {
 
-    onInit() {
-        super.onInit()
+    async onInit() {
+        super.onInit();
     }
 
     async onAdded() {
-        this.logNotice('Device has been added')
+        this.logNotice('Device has been added');
     }
 
     async onSettings({ oldSettings, newSettings, changedKeys }) {
-        this.logNotice('Device settings where changed')
+        this.logNotice('Device settings where changed');
     }
 
     async onRenamed(name) {
-        this.logNotice('Device was renamed')
+        this.logNotice('Device was renamed');
     }
 
     async onDeleted() {
-        this.logNotice('Device has been deleted')
+        this.logNotice('Device has been deleted');
     }
-
-}
+};

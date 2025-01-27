@@ -1,6 +1,8 @@
 {
     "cSpell.words": [
         "emerg",
+        "loki",
+        "simplesyslog",
         "telemetrycollector"
-    ]
+    ],
 }

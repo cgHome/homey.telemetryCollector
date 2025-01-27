@@ -6,18 +6,19 @@ const BaseDriver = require('../driver')
 
 module.exports = class SyslogAdapterDriver extends BaseDriver {
 
-  async onInit() {
-    super.onInit()
-    this.logInfo('Driver has been initialized')
-  }
+    async onInit() {
+        super.onInit()
 
-  async onPairListDevices(deviceName) {
-    return [{
-      name: 'Syslog-Adapter',
-      data: {
-        id: 'syslog-adapter'
-      },
-    }]
-  }
+        this.logInfo('Driver has been initialized')
+    }
+
+    async onPairListDevices(deviceName) {
+        return [{
+            name: 'Syslog-Adapter',
+            data: {
+                id: 'syslog-adapter'
+            },
+        }]
+    }
 
 }

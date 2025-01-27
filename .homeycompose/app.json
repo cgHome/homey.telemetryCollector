@@ -1,5 +1,5 @@
 {
-  "id": "org.cflat-inc.telemetryCollector",
+  "id": "org.cflat-inc.telemetrycollector",
   "version": "0.0.0",
   "compatibility": ">=12.3.0",
   "sdk": 3,
