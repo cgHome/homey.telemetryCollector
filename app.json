@@ -50,9 +50,9 @@
         "lan"
       ],
       "images": {
-        "small": "/drivers/lokiAdapter/assets/images/small.png",
-        "large": "/drivers/lokiAdapter/assets/images/large.png",
-        "xlarge": "/drivers/lokiAdapter/assets/images/xlarge.png"
+        "small": "/drivers/loki/assets/images/small.png",
+        "large": "/drivers/loki/assets/images/large.png",
+        "xlarge": "/drivers/loki/assets/images/xlarge.png"
       },
       "pair": [
         {
@@ -98,7 +98,7 @@
           }
         }
       ],
-      "id": "lokiAdapter"
+      "id": "loki"
     },
     {
       "name": {
@@ -113,9 +113,9 @@
         "lan"
       ],
       "images": {
-        "small": "/drivers/simpleLogAdapter/assets/images/small.png",
-        "large": "/drivers/simpleLogAdapter/assets/images/large.png",
-        "xlarge": "/drivers/simpleLogAdapter/assets/images/xlarge.png"
+        "small": "/drivers/simpleLog/assets/images/small.png",
+        "large": "/drivers/simpleLog/assets/images/large.png",
+        "xlarge": "/drivers/simpleLog/assets/images/xlarge.png"
       },
       "pair": [
         {
@@ -151,7 +151,7 @@
           "value": false
         }
       ],
-      "id": "simpleLogAdapter"
+      "id": "simpleLog"
     },
     {
       "name": {
@@ -166,9 +166,9 @@
         "lan"
       ],
       "images": {
-        "small": "/drivers/syslogAdapter/assets/images/small.png",
-        "large": "/drivers/syslogAdapter/assets/images/large.png",
-        "xlarge": "/drivers/syslogAdapter/assets/images/xlarge.png"
+        "small": "/drivers/syslog/assets/images/small.png",
+        "large": "/drivers/syslog/assets/images/large.png",
+        "xlarge": "/drivers/syslog/assets/images/xlarge.png"
       },
       "pair": [
         {
@@ -245,7 +245,7 @@
           "value": false
         }
       ],
-      "id": "syslogAdapter"
+      "id": "syslog"
     }
   ]
 }
