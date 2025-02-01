@@ -1,6 +1,6 @@
 {
   "name": {
-    "en": "SimpleSysLog Adapter"
+    "en": "OTel Log Adapter"
   },
   "class": "service",
   "capabilities": [],

@@ -27,7 +27,6 @@ module.exports = class TelemetryCollectorApp extends TelemetryCollectorApi(Homey
   }
 
   addLog(log) {
-    // this.log(`Log received > ${JSON.stringify(log)}`);
     this.emit('sendLog', log);
   }
 

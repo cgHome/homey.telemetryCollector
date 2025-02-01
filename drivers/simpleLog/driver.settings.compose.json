@@ -1,0 +1,18 @@
+[
+  {
+    "id": "autoDeactivateDebugLog",
+    "type": "checkbox",
+    "label": {
+      "en": "Automatically deactivate debug-log on startup"
+    },
+    "value": true
+  },
+  {
+    "id": "debugLogActivated",
+    "type": "checkbox",
+    "label": {
+      "en": "Debug-log activated"
+    },
+    "value": false
+  }
+]

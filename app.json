@@ -1,6 +1,6 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
-  "id": "org.cflat-inc.telemetrycollector",
+  "id": "org.cflat-inc.telemetryCollector",
   "version": "0.0.0",
   "compatibility": ">=12.3.0",
   "sdk": 3,
@@ -21,10 +21,11 @@
     "homey:app:org.cflat-inc.telemetryCollector",
     "homey:app:nl.nielsdeklerk.log"
   ],
+  "brandColor": "#004a98",
   "images": {
-    "small": "/assets/images/small.png",
-    "large": "/assets/images/large.png",
-    "xlarge": "/assets/images/xlarge.png"
+    "small": "/assets/images/small.jpg",
+    "large": "/assets/images/large.jpg",
+    "xlarge": "/assets/images/xlarge.jpg"
   },
   "author": {
     "name": "Chris Gross",
@@ -43,17 +44,6 @@
       },
       "class": "service",
       "capabilities": [],
-      "platforms": [
-        "local"
-      ],
-      "connectivity": [
-        "lan"
-      ],
-      "images": {
-        "small": "/drivers/loki/assets/images/small.png",
-        "large": "/drivers/loki/assets/images/large.png",
-        "xlarge": "/drivers/loki/assets/images/xlarge.png"
-      },
       "pair": [
         {
           "id": "list_devices",
@@ -70,6 +60,7 @@
           "template": "add_devices"
         }
       ],
+      "id": "loki",
       "settings": [
         {
           "id": "endpoint",
@@ -97,8 +88,7 @@
             "en": "The Port number of the service."
           }
         }
-      ],
-      "id": "loki"
+      ]
     },
     {
       "name": {
@@ -106,17 +96,6 @@
       },
       "class": "service",
       "capabilities": [],
-      "platforms": [
-        "local"
-      ],
-      "connectivity": [
-        "lan"
-      ],
-      "images": {
-        "small": "/drivers/simpleLog/assets/images/small.png",
-        "large": "/drivers/simpleLog/assets/images/large.png",
-        "xlarge": "/drivers/simpleLog/assets/images/xlarge.png"
-      },
       "pair": [
         {
           "id": "list_devices",
@@ -133,6 +112,7 @@
           "template": "add_devices"
         }
       ],
+      "id": "simpleLog",
       "settings": [
         {
           "id": "autoDeactivateDebugLog",
@@ -150,8 +130,7 @@
           },
           "value": false
         }
-      ],
-      "id": "simpleLog"
+      ]
     },
     {
       "name": {
@@ -159,17 +138,6 @@
       },
       "class": "service",
       "capabilities": [],
-      "platforms": [
-        "local"
-      ],
-      "connectivity": [
-        "lan"
-      ],
-      "images": {
-        "small": "/drivers/syslog/assets/images/small.png",
-        "large": "/drivers/syslog/assets/images/large.png",
-        "xlarge": "/drivers/syslog/assets/images/xlarge.png"
-      },
       "pair": [
         {
           "id": "list_devices",
@@ -186,6 +154,7 @@
           "template": "add_devices"
         }
       ],
+      "id": "syslog",
       "settings": [
         {
           "id": "endpoint",
@@ -244,8 +213,7 @@
           },
           "value": false
         }
-      ],
-      "id": "syslog"
+      ]
     }
   ]
 }

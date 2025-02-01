@@ -3,9 +3,10 @@
 // const Homey = require('homey');
 
 const { TELCO_LOGLEVEL } = require('homey-telemetrycollector-api');
-const LogDevice = require('../logDevice');
 
 const SimpleLogAppApi = require('../../lib/simpleLogAppApi');
+
+const LogDevice = require('../logDevice');
 
 const SEVERITY = Object.freeze({
   [TELCO_LOGLEVEL.EMERGENCY]: 0,
@@ -18,7 +19,7 @@ const SEVERITY = Object.freeze({
   [TELCO_LOGLEVEL.DEBUG]: 7,
 });
 
-module.exports = class SimpleLogAdapterDevice extends LogDevice {
+module.exports = class SimpleLogAdapter extends LogDevice {
 
   async onInit() {
     super.onInit();

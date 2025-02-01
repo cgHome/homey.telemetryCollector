@@ -4,7 +4,7 @@
 
 const BaseDriver = require('../driver');
 
-module.exports = class LokiAdapterDriver extends BaseDriver {
+module.exports = class LokiDriver extends BaseDriver {
 
   async onInit() {
     super.onInit();
@@ -14,7 +14,7 @@ module.exports = class LokiAdapterDriver extends BaseDriver {
 
   async onPairListDevices() {
     return [{
-      name: 'GrafanaLoki Adapter',
+      name: 'Grafana Loki Adapter',
       data: {
         id: 'loki-adapter',
       },

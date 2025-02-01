@@ -6,7 +6,7 @@ const BaseDriver = require('../driver');
 
 const SimpleLogAppApi = require('../../lib/simpleLogAppApi');
 
-module.exports = class SimpleLogAdapterDriver extends BaseDriver {
+module.exports = class SimpleLogDriver extends BaseDriver {
 
   async onInit() {
     super.onInit();
@@ -17,11 +17,11 @@ module.exports = class SimpleLogAdapterDriver extends BaseDriver {
     this.logInfo('Driver has been initialized');
   }
 
-  async onPairListDevices(deviceName) {
+  async onPairListDevices() {
     return [{
-      name: 'SimpleSysLog-Adapter',
+      name: 'SimpleSysLog Adapter',
       data: {
-        id: 'simplesyslog-adapter',
+        id: 'simpleSysLog-adapter',
       },
     }];
   }

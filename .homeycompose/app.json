@@ -1,5 +1,5 @@
 {
-  "id": "org.cflat-inc.telemetrycollector",
+  "id": "org.cflat-inc.telemetryCollector",
   "version": "0.0.0",
   "compatibility": ">=12.3.0",
   "sdk": 3,
@@ -20,10 +20,11 @@
     "homey:app:org.cflat-inc.telemetryCollector",
     "homey:app:nl.nielsdeklerk.log"
   ],
+  "brandColor": "#004a98",
   "images": {
-    "small": "/assets/images/small.png",
-    "large": "/assets/images/large.png",
-    "xlarge": "/assets/images/xlarge.png"
+    "small": "/assets/images/small.jpg",
+    "large": "/assets/images/large.jpg",
+    "xlarge": "/assets/images/xlarge.jpg"
   },
   "author": {
     "name": "Chris Gross",

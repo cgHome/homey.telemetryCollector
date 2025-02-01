@@ -6,7 +6,7 @@
   },
   "main": "app.js",
   "scripts": {
-    "upd:telco": "npm install github:cgHome/homey.telemetryCollector-api#main",
+    "upd:telco": "npm uninstall homey-telemetrycollector-api && npm install github:cgHome/homey.telemetryCollector-api#main",
     "lint": "eslint --ext .js,.ts --ignore-path .gitignore ."
   },
   "devDependencies": {
