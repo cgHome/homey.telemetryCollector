@@ -4,7 +4,7 @@
 
 const BaseDriver = require('../driver');
 
-module.exports = class LokiDriver extends BaseDriver {
+module.exports = class OtelLogDriver extends BaseDriver {
 
   async onInit() {
     super.onInit();
@@ -14,9 +14,9 @@ module.exports = class LokiDriver extends BaseDriver {
 
   async onPairListDevices() {
     return [{
-      name: 'Grafana-Loki Adapter',
+      name: 'OTel-Log Adapter',
       data: {
-        id: 'loki-adapter',
+        id: 'otellog-adapter',
       },
     }];
   }

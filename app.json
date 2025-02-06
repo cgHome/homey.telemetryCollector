@@ -92,6 +92,58 @@
     },
     {
       "name": {
+        "en": "OTel Log Adapter"
+      },
+      "class": "service",
+      "capabilities": [],
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          },
+          "options": {
+            "singular": true
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "id": "otelLog",
+      "settings": [
+        {
+          "id": "endpoint",
+          "type": "text",
+          "label": {
+            "en": "Endpoint"
+          },
+          "value": "",
+          "placeholder": "192.168.1.100",
+          "hint": {
+            "en": "The IP address of the service."
+          }
+        },
+        {
+          "id": "port",
+          "type": "number",
+          "label": {
+            "en": "Port"
+          },
+          "min": 1,
+          "max": 65536,
+          "step": 1,
+          "value": 4318,
+          "hint": {
+            "en": "The Port number of the service."
+          }
+        }
+      ]
+    },
+    {
+      "name": {
         "en": "SimpleSysLog Adapter"
       },
       "class": "service",

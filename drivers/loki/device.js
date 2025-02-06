@@ -19,9 +19,7 @@ module.exports = class LokiAdapter extends LogDevice {
     super.createLogger(settings);
 
     // ipAddress not set
-    if (!this.settings.endpoint) {
-      return null;
-    }
+    if (!this.settings.endpoint) return null;
 
     const logger = winston.createLogger({
       level: 'debug',

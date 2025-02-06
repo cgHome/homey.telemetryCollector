@@ -35,6 +35,9 @@ module.exports = class SyslogAdapter extends LogDevice {
   async createLogger(settings) {
     super.createLogger(settings);
 
+    // ipAddress not set
+    if (!this.settings.endpoint) return null;
+
     const logger = winston.createLogger({
       level: 'debug',
       levels: winston.config.syslog.levels,

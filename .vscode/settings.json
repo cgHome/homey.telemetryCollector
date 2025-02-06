@@ -1,8 +1,10 @@
 {
-    "cSpell.words": [
-        "emerg",
-        "loki",
-        "simplesyslog",
-        "telemetrycollector"
-    ],
+  "cSpell.words": [
+    "emerg",
+    "loki",
+    "opentelemetry",
+    "otlp",
+    "simplesyslog",
+    "telemetrycollector"
+  ],
 }

@@ -1,4 +1,6 @@
 {
+  "class": "service",
+  "capabilities": [],
   "platforms": [
     "local"
   ],
@@ -10,5 +12,21 @@
     "small": "{{driverAssetsPath}}/images/small.jpg",
     "large": "{{driverAssetsPath}}/images/large.jpg",
     "xlarge": "{{driverAssetsPath}}/images/xlarge.jpg"
-  }
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      },
+      "options": {
+        "singular": true
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ]
 }

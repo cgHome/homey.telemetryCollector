@@ -1,6 +1,7 @@
 {
+  "deprecated": true,
   "name": {
-    "en": "OTel Log Adapter"
+    "en": "OTel-Log Adapter"
   },
   "class": "service",
   "capabilities": [],

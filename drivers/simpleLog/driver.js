@@ -21,7 +21,7 @@ module.exports = class SimpleLogDriver extends BaseDriver {
     return [{
       name: 'SimpleSysLog Adapter',
       data: {
-        id: 'simpleSysLog-adapter',
+        id: 'simplelog-adapter',
       },
     }];
   }

@@ -1,6 +1,6 @@
 # Telemetry Collector
 
-## Devices
+## Adapter
 
 ### Logs
 
@@ -11,7 +11,11 @@
 
 - https://betterstack.com/community/guides/logging/how-to-install-setup-and-use-winston-and-morgan-to-log-node-js-applications/
 
-- https://signoz.io/guides/syslog-levels/
+#### OTel
+- https://www.npmjs.com/package/@opentelemetry/winston-transport
+- https://opentelemetry.io/docs/languages/sdk-configuration/otlp-exporter/
+- https://signoz.io/docs/logs-management/send-logs/nodejs-winston-logs/
+
 
 ### Metrics
 
