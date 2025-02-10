@@ -9,16 +9,15 @@
 const { Produce } = require('glossy');
 
 const winston = require('winston');
-require('winston-syslog');
+// eslint-disable-next-line no-unused-expressions
+require('winston-syslog').Syslog;
 
 const LogDevice = require('../logDevice');
 
 class SyslogProducer extends Produce {
 
   produce(data) {
-    const msgData = JSON.parse(data.message);
-    msgData.date = new Date(msgData.date);
-    const message = super.produce({ ...data, ...msgData });
+    const message = `${super.produce({ ...data, ...JSON.parse(data.message) })}\n`;
     return message;
   }
 
@@ -35,13 +34,10 @@ module.exports = class SyslogAdapter extends LogDevice {
   async createLogger(settings) {
     super.createLogger(settings);
 
-    // ipAddress not set
-    if (!this.settings.endpoint) return null;
-
     const logger = winston.createLogger({
       level: 'debug',
       levels: winston.config.syslog.levels,
-      // format: format.errors({ stack: true }),
+      // format: winston.format.errors({ stack: true }), >> Format not working, message = undefined
       transports: [
         // new winston.transports.Console(),
         new winston.transports.Syslog({
@@ -64,22 +60,17 @@ module.exports = class SyslogAdapter extends LogDevice {
   }
 
   sendLog(log) {
-    const data = {
-      level: log.level,
+    this.logger.log(log.level, {
       severity: log.level,
       facility: log.metadata.facility,
-      date: log.ts,
-      host: this.homey.app.systemName,
-      appName: log.metadata.application,
+      date: (new Date()).toISOString(),
+      host: this.settings.host ? this.settings.host : this.homey.app.systemName,
+      appName: log.metadata.app,
       pid: '-',
       msgID: log.metadata.id.replaceAll('-', ''),
       structuredData: { 'telCoLog@homey': log.metadata },
       message: log.message,
-    };
-
-    // this.log(`#sendLog() data: ${JSON.stringify(data)}`)
-
-    this.logger.log(data);
+    });
   }
 
 };

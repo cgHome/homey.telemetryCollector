@@ -49,13 +49,14 @@ module.exports = class OtelLogAdapter extends LogDevice {
     const logger = winston.createLogger({
       level: 'debug',
       levels: winston.config.syslog.levels,
+      defaultMeta: { service: 'telco@homey' },
       format: winston.format.combine(
         winston.format.json(),
         winston.format.timestamp(),
         winston.format.errors({ stack: true }),
       ),
       transports: [
-        new winston.transports.Console(),
+        // new winston.transports.Console(),
         new OpenTelemetryTransportV3({
           onConnectionError: (err) => this.error(err),
         }),

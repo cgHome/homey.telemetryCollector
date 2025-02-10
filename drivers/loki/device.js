@@ -24,13 +24,17 @@ module.exports = class LokiAdapter extends LogDevice {
     const logger = winston.createLogger({
       level: 'debug',
       levels: winston.config.syslog.levels,
-      // format: format.errors({ stack: true }),
+      defaultMeta: { service: 'telco@homey' },
+      format: winston.format.combine(
+        winston.format.json(),
+        winston.format.timestamp(),
+        winston.format.errors({ stack: true }),
+      ),
       transports: [
         // new winston.transports.Console(),
         new LokiTransport({
           host: `http://${this.settings.endpoint}:${this.settings.port}`,
           json: true,
-          replaceTimestamp: true,
           onConnectionError: (err) => this.error(err),
         }),
       ],
@@ -42,15 +46,11 @@ module.exports = class LokiAdapter extends LogDevice {
   }
 
   sendLog(log) {
-    const data = {
+    this.logger.log({
       level: log.level,
       message: log.message,
       labels: log.metadata,
-    };
-
-    // this.log(`#sendLog() data: ${JSON.stringify(data)}`)
-
-    this.logger.log(data);
+    });
   }
 
 };
