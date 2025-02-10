@@ -265,6 +265,18 @@
             "en": "Use RFC-3164 (Obsolete)"
           },
           "value": false
+        },
+        {
+          "id": "host",
+          "type": "text",
+          "label": {
+            "en": "Host"
+          },
+          "value": "",
+          "placeholder": "Name",
+          "hint": {
+            "en": "Specify host name. (Default value is the Homey-Pro name)"
+          }
         }
       ]
     }

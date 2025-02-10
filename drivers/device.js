@@ -2,9 +2,7 @@
 
 const Homey = require('homey');
 
-const { TelemetryCollectorApi } = require('homey-telemetrycollector-api');
-
-module.exports = class BaseDevice extends TelemetryCollectorApi(Homey.Device) {
+module.exports = class BaseDevice extends Homey.Device {
 
   async onInit() {
     super.onInit();

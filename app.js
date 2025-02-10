@@ -3,7 +3,9 @@
 const Homey = require('homey');
 const { HomeyAPI } = require('homey-api');
 
-const { TelemetryCollectorApi } = require('homey-telemetrycollector-api');
+// Install the TelemetryCollector Api
+// eslint-disable-next-line no-unused-expressions
+require('homey-telemetrycollector-api').install;
 
 // Development
 const inspector = require('node:inspector');
@@ -16,7 +18,7 @@ if (process.env.DEBUG === '1') {
   }
 }
 
-module.exports = class TelemetryCollectorApp extends TelemetryCollectorApi(Homey.App) {
+module.exports = class TelemetryCollectorApp extends Homey.App {
 
   async onInit() {
     this.homeyApi = await HomeyAPI.createAppAPI({ homey: this.homey });
