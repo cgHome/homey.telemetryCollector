@@ -47,7 +47,7 @@ module.exports = class SimpleLogAdapter extends LogDevice {
     const data = {
       timestamp: log.ts,
       severity: SEVERITY[log.level],
-      facility: log.metadata.facilityName,
+      facility: log.metadata.facility,
       group: log.metadata.app,
       log: log.message,
     };
