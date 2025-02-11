@@ -24,5 +24,17 @@
     "hint": {
       "en": "The Port number of the service."
     }
+  },
+  {
+    "id": "host",
+    "type": "text",
+    "label": {
+      "en": "Host"
+    },
+    "value": "",
+    "placeholder": "Name",
+    "hint": {
+      "en": "Specify host name. (Default value is the Homey-Pro name)"
+    }
   }
 ]

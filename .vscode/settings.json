@@ -5,6 +5,7 @@
     "opentelemetry",
     "otlp",
     "simplesyslog",
-    "telemetrycollector"
+    "telemetrycollector",
+    "UUCP"
   ],
 }

@@ -20,10 +20,23 @@ if (process.env.DEBUG === '1') {
 
 module.exports = class TelemetryCollectorApp extends Homey.App {
 
+  #actionSend2Log;
+
   async onInit() {
     this.homeyApi = await HomeyAPI.createAppAPI({ homey: this.homey });
 
     this.systemName = await this.homeyApi.system.getSystemName();
+
+    this.#actionSend2Log = this.homey.flow.getActionCard('send2log');
+    this.#actionSend2Log.registerRunListener((args, state) => this.addLog({
+      level: args.level,
+      message: args.message,
+      metadata: {
+        app: args.app ? args.app : '[none]',
+        facility: 16,
+        facilityName: 'Flow',
+      },
+    }));
 
     this.logInfo('App has been initialized');
   }

@@ -46,8 +46,9 @@ module.exports = class LokiAdapter extends LogDevice {
   }
 
   sendLog(log) {
-    this.logger.log({
-      level: log.level,
+    log.metadata['host'] = this.settings.host ? this.settings.host : this.homey.app.systemName;
+
+    this.logger.log(log.level, {
       message: log.message,
       labels: log.metadata,
     });

@@ -1,0 +1,89 @@
+{
+  "id": "send2log",
+  "title": {
+    "en": "Send to log"
+  },
+  "titleFormatted": {
+    "en": "Send the [[message]] to the log under [[app]] with [[level]]"
+  },
+  "args": [
+    {
+      "name": "message",
+      "type": "text",
+      "placeholder": {
+        "en": "Message..."
+      },
+      "title": {
+        "en": "Message"
+      }
+    },
+    {
+      "name": "app",
+      "required": false,
+      "type": "text",
+      "placeholder": {
+        "en": "Application"
+      }
+    },
+    {
+      "type": "dropdown",
+      "name": "level",
+      "placeholder": {
+        "en": "Level"
+      },
+      "title": {
+        "en": "Level"
+      },
+      "values": [
+        {
+          "id": "emerg",
+          "label": {
+            "en": "Emergency"
+          }
+        },
+        {
+          "id": "alert",
+          "label": {
+            "en": "Alert"
+          }
+        },
+        {
+          "id": "crit",
+          "label": {
+            "en": "Critical"
+          }
+        },
+        {
+          "id": "error",
+          "label": {
+            "en": "Error"
+          }
+        },
+        {
+          "id": "warning",
+          "label": {
+            "en": "Warning"
+          }
+        },
+        {
+          "id": "notice",
+          "label": {
+            "en": "Notice"
+          }
+        },
+        {
+          "id": "info",
+          "label": {
+            "en": "Info"
+          }
+        },
+        {
+          "id": "debug",
+          "label": {
+            "en": "Debug"
+          }
+        }
+      ]
+    }
+  ]
+}
