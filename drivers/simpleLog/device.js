@@ -28,11 +28,9 @@ module.exports = class SimpleLogAdapter extends LogDevice {
       this.settings.debugLogActivated = false;
 
       await this.setSettings(this.settings)
-        .then(this.logNotice('onInit() > Debug-log (automatically) deactivated'))
+        .then(this.logNotice('Debug-log (automatically) deactivated'))
         .catch((error) => this.logError(error));
     }
-
-    this.logInfo('Device has been initialized');
   }
 
   async isConnected() {

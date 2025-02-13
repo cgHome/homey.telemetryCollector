@@ -2,6 +2,7 @@
 
 const { FlatCompat } = require('@eslint/eslintrc');
 
+// eslint-disable-next-line import/no-extraneous-dependencies
 const js = require('@eslint/js');
 
 const compat = new FlatCompat({

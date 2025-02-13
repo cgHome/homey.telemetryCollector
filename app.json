@@ -45,7 +45,7 @@
           "en": "Send to log"
         },
         "titleFormatted": {
-          "en": "Send [[message]] to the log under [[app]] with [[level]] of flow"
+          "en": "Send the [[message]] to the log under [[app]] with [[level]]"
         },
         "args": [
           {

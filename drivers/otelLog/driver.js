@@ -8,8 +8,6 @@ module.exports = class OtelLogDriver extends BaseDriver {
 
   async onInit() {
     super.onInit();
-
-    this.logInfo('Driver has been initialized');
   }
 
   async onPairListDevices() {

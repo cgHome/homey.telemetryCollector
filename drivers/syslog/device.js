@@ -27,8 +27,6 @@ module.exports = class SyslogAdapter extends LogDevice {
 
   async onInit() {
     super.onInit();
-
-    this.logInfo('Device has been initialized');
   }
 
   async createLogger(settings) {
@@ -68,7 +66,7 @@ module.exports = class SyslogAdapter extends LogDevice {
       appName: log.metadata.app,
       pid: '-',
       msgID: log.metadata.id.replaceAll('-', ''),
-      structuredData: { 'telCoLog@homey': log.metadata },
+      structuredData: { 'telco@homey': log.metadata },
       message: log.message,
     });
   }

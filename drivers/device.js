@@ -6,6 +6,9 @@ module.exports = class BaseDevice extends Homey.Device {
 
   async onInit() {
     super.onInit();
+
+    this.ready()
+      .then(() => this.logInfo('Device ready'));
   }
 
   async onAdded() {

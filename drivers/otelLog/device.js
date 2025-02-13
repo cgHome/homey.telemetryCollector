@@ -16,8 +16,6 @@ module.exports = class OtelLogAdapter extends LogDevice {
 
   async onInit() {
     super.onInit();
-
-    this.logInfo('Device has been initialized');
   }
 
   async createLogger(settings) {

@@ -13,8 +13,6 @@ module.exports = class SimpleLogDriver extends BaseDriver {
 
     // Init AppApi
     await SimpleLogAppApi.getInstance(this.homey);
-
-    this.logInfo('Driver has been initialized');
   }
 
   async onPairListDevices() {
