@@ -4,7 +4,7 @@ const Homey = require('homey');
 const { HomeyAPI } = require('homey-api');
 
 // Install the TelemetryCollector Api
-// eslint-disable-next-line no-unused-expressions
+// eslint-disable-next-line no-unused-expressions, node/no-extraneous-require
 require('homey-telemetrycollector-api').install;
 
 // Development

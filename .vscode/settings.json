@@ -3,6 +3,7 @@
     "emerg",
     "loki",
     "opentelemetry",
+    "otellog",
     "otlp",
     "simplesyslog",
     "telemetrycollector",
