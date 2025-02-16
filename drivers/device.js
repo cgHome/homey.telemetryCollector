@@ -7,6 +7,9 @@ module.exports = class BaseDevice extends Homey.Device {
   async onInit() {
     super.onInit();
 
+    this.homey
+      .on('unload', this.onUnload.bind(this));
+
     this.ready()
       .then(() => this.logInfo('Device ready'));
   }
@@ -25,6 +28,10 @@ module.exports = class BaseDevice extends Homey.Device {
 
   async onDeleted() {
     this.logNotice('Device has been deleted');
+  }
+
+  async onUnload() {
+    this.logDebug('Device unloaded');
   }
 
 };
