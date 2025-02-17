@@ -61,7 +61,7 @@ module.exports = class SyslogAdapter extends LogDevice {
     this.logger.log(log.level, {
       severity: log.level,
       facility: log.metadata.facility,
-      date: (new Date()).toISOString(),
+      date: log.timestamp,
       host: this.settings.host ? this.settings.host : this.homey.app.systemName,
       appName: log.metadata.app,
       pid: '-',

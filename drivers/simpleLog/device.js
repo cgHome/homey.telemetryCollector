@@ -38,12 +38,10 @@ module.exports = class SimpleLogAdapter extends LogDevice {
   }
 
   async sendLog(log) {
-    if (log.level === TELCO_LOGLEVEL.DEBUG && !this.settings.debugLogActivated) {
-      return;
-    }
+    if (log.level === TELCO_LOGLEVEL.DEBUG && !this.settings.debugLogActivated) return;
 
     const data = {
-      timestamp: log.ts,
+      timestamp: log.timestamp,
       severity: SEVERITY[log.level],
       facility: log.metadata.facility,
       group: log.metadata.app,

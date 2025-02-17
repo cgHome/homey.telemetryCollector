@@ -23,6 +23,8 @@ module.exports = class TelemetryCollectorApp extends Homey.App {
   #actionSend2Log;
 
   async onInit() {
+    this.notifyInfo('Starting App');
+
     this.homeyApi = await HomeyAPI.createAppAPI({ homey: this.homey });
 
     this.systemName = await this.homeyApi.system.getSystemName();
@@ -43,6 +45,14 @@ module.exports = class TelemetryCollectorApp extends Homey.App {
 
   addLog(log) {
     this.emit('sendLog', log);
+  }
+
+  notifyInfo(msg) {
+    return this.homey.notifications.createNotification({
+      excerpt: `**${this.homey.manifest.name.en}** - ${msg}`,
+    })
+      .then(() => this.logInfo(`${msg}`))
+      .catch((err) => this.logError(`notifyInfo() > ${err}`));
   }
 
 };
