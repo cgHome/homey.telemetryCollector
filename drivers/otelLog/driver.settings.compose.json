@@ -1,28 +1,60 @@
 [
   {
-    "id": "endpoint",
-    "type": "text",
+    "type": "group",
     "label": {
-      "en": "Endpoint"
+      "en": "Log settings"
     },
-    "value": "",
-    "placeholder": "192.168.1.100",
-    "hint": {
-      "en": "The IP address of the service."
-    }
+    "children": [
+      {
+        "id": "debugLogActivated",
+        "type": "checkbox",
+        "label": {
+          "en": "Debug.Log activated"
+        },
+        "value": false
+      },
+      {
+        "id": "autoDeactivateDebugLog",
+        "type": "checkbox",
+        "label": {
+          "en": "Automatically deactivate Debug.Log on startup"
+        },
+        "value": true
+      }
+    ]
   },
   {
-    "id": "port",
-    "type": "number",
+    "type": "group",
     "label": {
-      "en": "Port"
+      "en": "Server settings"
     },
-    "min": 1,
-    "max": 65536,
-    "step": 1,
-    "value": 4318,
-    "hint": {
-      "en": "The Port number of the service."
-    }
+    "children": [
+      {
+        "id": "endpoint",
+        "type": "text",
+        "label": {
+          "en": "Endpoint"
+        },
+        "value": "",
+        "placeholder": "192.168.1.100",
+        "hint": {
+          "en": "The IP address of the server."
+        }
+      },
+      {
+        "id": "port",
+        "type": "number",
+        "label": {
+          "en": "Port"
+        },
+        "min": 1,
+        "max": 65536,
+        "step": 1,
+        "value": 4318,
+        "hint": {
+          "en": "The Port number of the server."
+        }
+      }
+    ]
   }
 ]

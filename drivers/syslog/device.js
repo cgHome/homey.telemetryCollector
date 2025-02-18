@@ -4,6 +4,8 @@
 
 // const Homey = require('homey');
 
+const { TELCO_LOGLEVEL } = require('homey-telemetrycollector-api');
+
 /* eslint-disable import/no-extraneous-dependencies */
 // eslint-disable-next-line node/no-extraneous-require
 const { Produce } = require('glossy');
@@ -58,11 +60,13 @@ module.exports = class SyslogAdapter extends LogDevice {
   }
 
   sendLog(log) {
+    if (log.level === TELCO_LOGLEVEL.DEBUG && !this.settings.debugLogActivated) return;
+
     this.logger.log(log.level, {
       severity: log.level,
       facility: log.metadata.facility,
       date: log.timestamp,
-      host: this.settings.host ? this.settings.host : this.homey.app.systemName,
+      host: this.settings.hostname ? this.settings.hostname : this.homey.app.systemName,
       appName: log.metadata.app,
       pid: '-',
       msgID: log.metadata.id.replaceAll('-', ''),

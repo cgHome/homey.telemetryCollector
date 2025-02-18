@@ -6,8 +6,13 @@
   },
   "main": "app.js",
   "scripts": {
-    "upd:telco": "npm uninstall homey-telemetrycollector-api && npm install github:cgHome/homey.telemetryCollector-api#main",
-    "lint": "eslint --ext .js,.ts --ignore-path .gitignore ."
+    "debug": "homey app run",
+    "debug:remote": "npm run debug -- --remote",
+    "install": "npx homey app install",
+    "build": "homey app build",
+    "publish": "homey app publish",
+    "lint": "eslint",
+    "upd:telco": "npm uninstall homey-telemetrycollector-api && npm install github:cgHome/homey.telemetryCollector-api#main"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.2.0",

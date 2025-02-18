@@ -13,7 +13,17 @@ module.exports = class LogDevice extends BaseDevice {
   async onInit() {
     super.onInit();
 
-    this.homey.app.on('sendLog', this.#addToLogQueue.bind(this));
+    this.settings = this.getSettings();
+    if (this.settings.autoDeactivateDebugLog && this.settings.debugLogActivated) {
+      this.settings.debugLogActivated = false;
+
+      await this.setSettings(this.settings)
+        .then(this.logNotice('Debug.Log (automatically) deactivated'))
+        .catch((error) => this.logError(error));
+    }
+
+    this.homey.app
+      .on('sendLog', this.#addToLogQueue.bind(this));
 
     this.logger = await this.createLogger();
   }
@@ -26,22 +36,22 @@ module.exports = class LogDevice extends BaseDevice {
     return !!this.logger;
   }
 
-  async createLogger(settings) {
+  createLogger(settings) {
     this.settings = settings || this.getSettings();
   }
 
-  async sendLog(log) {
+  sendLog(log) {
     throw Error('Subclass responsibility');
   }
 
-  #addToLogQueue(log) {
+  async #addToLogQueue(log) {
     if (this.#logQueue.length < QUEUE_MAX) {
-      this.#logQueue.push(log);
-      this.#handleQueue();
+      await this.#logQueue.push(log);
+      await this.#handleQueue();
     }
   }
 
-  async #handleQueue() {
+  #handleQueue() {
     while (this.isConnected() && this.#logQueue.length > 0) {
       this.sendLog(this.#logQueue.shift());
     }

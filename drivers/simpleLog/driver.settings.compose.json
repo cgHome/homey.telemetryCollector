@@ -1,18 +1,26 @@
 [
   {
-    "id": "autoDeactivateDebugLog",
-    "type": "checkbox",
+    "type": "group",
     "label": {
-      "en": "Automatically deactivate debug-log on startup"
+      "en": "Log settings"
     },
-    "value": true
-  },
-  {
-    "id": "debugLogActivated",
-    "type": "checkbox",
-    "label": {
-      "en": "Debug-log activated"
-    },
-    "value": false
+    "children": [
+      {
+        "id": "debugLogActivated",
+        "type": "checkbox",
+        "label": {
+          "en": "Debug.Log activated"
+        },
+        "value": false
+      },
+      {
+        "id": "autoDeactivateDebugLog",
+        "type": "checkbox",
+        "label": {
+          "en": "Automatically deactivate Debug.Log on startup"
+        },
+        "value": true
+      }
+    ]
   }
 ]

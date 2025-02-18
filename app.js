@@ -3,10 +3,6 @@
 const Homey = require('homey');
 const { HomeyAPI } = require('homey-api');
 
-// Install the TelemetryCollector Api
-// eslint-disable-next-line no-unused-expressions, node/no-extraneous-require
-require('homey-telemetrycollector-api').install;
-
 // Development
 const inspector = require('node:inspector');
 
@@ -17,6 +13,17 @@ if (process.env.DEBUG === '1') {
     inspector.open(9229, '0.0.0.0', true);
   }
 }
+
+// Install the TelemetryCollector Api
+// eslint-disable-next-line no-unused-expressions, node/no-extraneous-require
+require('homey-telemetrycollector-api').install;
+
+// Mixin Pattern
+Object.assign(Homey.SimpleClass.prototype, {
+  isDebugModeOn() {
+    return process.env.DEBUG === '1';
+  },
+});
 
 module.exports = class TelemetryCollectorApp extends Homey.App {
 

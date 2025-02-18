@@ -2,6 +2,8 @@
 
 // const Homey = require('homey');
 
+const { TELCO_LOGLEVEL } = require('homey-telemetrycollector-api');
+
 const winston = require('winston');
 const LokiTransport = require('winston-loki');
 
@@ -44,7 +46,9 @@ module.exports = class LokiAdapter extends LogDevice {
   }
 
   sendLog(log) {
-    log.metadata['host'] = this.settings.host ? this.settings.host : this.homey.app.systemName;
+    if (log.level === TELCO_LOGLEVEL.DEBUG && !this.settings.debugLogActivated) return;
+
+    log.metadata['host'] = this.settings.hostname ? this.settings.hostname : this.homey.app.systemName;
 
     this.logger.log(log.level, {
       message: log.message,

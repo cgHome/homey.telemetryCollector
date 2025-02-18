@@ -1,40 +1,72 @@
 [
   {
-    "id": "endpoint",
-    "type": "text",
+    "type": "group",
     "label": {
-      "en": "Endpoint"
+      "en": "Log settings"
     },
-    "value": "",
-    "placeholder": "192.168.1.100",
-    "hint": {
-      "en": "The IP address of the service."
-    }
+    "children": [
+      {
+        "id": "debugLogActivated",
+        "type": "checkbox",
+        "label": {
+          "en": "Debug.Log activated"
+        },
+        "value": false
+      },
+      {
+        "id": "autoDeactivateDebugLog",
+        "type": "checkbox",
+        "label": {
+          "en": "Automatically deactivate Debug.Log on startup"
+        },
+        "value": true
+      }
+    ]
   },
   {
-    "id": "port",
-    "type": "number",
+    "type": "group",
     "label": {
-      "en": "Port"
+      "en": "Server settings"
     },
-    "min": 1,
-    "max": 65536,
-    "step": 1,
-    "value": 3100,
-    "hint": {
-      "en": "The Port number of the service."
-    }
-  },
-  {
-    "id": "host",
-    "type": "text",
-    "label": {
-      "en": "Host"
-    },
-    "value": "",
-    "placeholder": "Name",
-    "hint": {
-      "en": "Specify host name. (Default value is the Homey-Pro name)"
-    }
+    "children": [
+      {
+        "id": "endpoint",
+        "type": "text",
+        "label": {
+          "en": "Endpoint"
+        },
+        "value": "",
+        "placeholder": "192.168.1.100",
+        "hint": {
+          "en": "The IP address of the service."
+        }
+      },
+      {
+        "id": "port",
+        "type": "number",
+        "label": {
+          "en": "Port"
+        },
+        "min": 1,
+        "max": 65536,
+        "step": 1,
+        "value": 3100,
+        "hint": {
+          "en": "The Port number of the service."
+        }
+      },
+      {
+        "id": "hostname",
+        "type": "text",
+        "label": {
+          "en": "Hostname"
+        },
+        "value": "",
+        "placeholder": "Name",
+        "hint": {
+          "en": "Specify host name. (Default value is the Homey-Pro name)"
+        }
+      }
+    ]
   }
 ]

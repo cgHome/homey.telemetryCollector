@@ -1,71 +1,103 @@
 [
   {
-    "id": "endpoint",
-    "type": "text",
+    "type": "group",
     "label": {
-      "en": "Endpoint"
+      "en": "Log settings"
     },
-    "value": "",
-    "placeholder": "192.168.1.100",
-    "hint": {
-      "en": "The IP address of the service."
-    }
-  },
-  {
-    "id": "port",
-    "type": "number",
-    "label": {
-      "en": "Port"
-    },
-    "min": 1,
-    "max": 65536,
-    "step": 1,
-    "value": 601,
-    "hint": {
-      "en": "The Port number of the service."
-    }
-  },
-  {
-    "id": "transport",
-    "type": "dropdown",
-    "label": {
-      "en": "Transport mode"
-    },
-    "value": "tcp",
-    "placeholder": "",
-    "values": [
+    "children": [
       {
-        "id": "tcp",
+        "id": "debugLogActivated",
+        "type": "checkbox",
         "label": {
-          "en": "tcp"
-        }
+          "en": "Debug.Log activated"
+        },
+        "value": false
       },
       {
-        "id": "udp",
+        "id": "autoDeactivateDebugLog",
+        "type": "checkbox",
         "label": {
-          "en": "udp"
-        }
+          "en": "Automatically deactivate Debug.Log on startup"
+        },
+        "value": true
       }
     ]
   },
   {
-    "id": "useRfc3164",
-    "type": "checkbox",
+    "type": "group",
     "label": {
-      "en": "Use RFC-3164 (Obsolete)"
+      "en": "Server settings"
     },
-    "value": false
-  },
-  {
-    "id": "host",
-    "type": "text",
-    "label": {
-      "en": "Host"
-    },
-    "value": "",
-    "placeholder": "Name",
-    "hint": {
-      "en": "Specify host name. (Default value is the Homey-Pro name)"
-    }
+    "children": [
+      {
+        "id": "endpoint",
+        "type": "text",
+        "label": {
+          "en": "Endpoint"
+        },
+        "value": "",
+        "placeholder": "192.168.1.100",
+        "hint": {
+          "en": "The IP address of the server."
+        }
+      },
+      {
+        "id": "port",
+        "type": "number",
+        "label": {
+          "en": "Port"
+        },
+        "min": 1,
+        "max": 65536,
+        "step": 1,
+        "value": 601,
+        "hint": {
+          "en": "The Port number of the server."
+        }
+      },
+      {
+        "id": "transport",
+        "type": "dropdown",
+        "label": {
+          "en": "Transport mode"
+        },
+        "value": "tcp",
+        "placeholder": "",
+        "values": [
+          {
+            "id": "tcp",
+            "label": {
+              "en": "tcp"
+            }
+          },
+          {
+            "id": "udp",
+            "label": {
+              "en": "udp"
+            }
+          }
+        ]
+      },
+      {
+        "id": "useRfc3164",
+        "type": "checkbox",
+        "label": {
+          "en": "Use RFC-3164 (Obsolete)"
+        },
+        "value": false
+      },
+      {
+        "id": "hostname",
+        "type": "text",
+        "label": {
+          "en": "Hostname"
+        },
+        "value": "",
+        "placeholder": "Name",
+        "hint": {
+          "en": "Specify host name. (Default value is the Homey-Pro name)"
+        }
+      }
+    ]
   }
 ]
