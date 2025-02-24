@@ -2,6 +2,8 @@
 
 // const Homey = require('homey');
 
+const { TELCO_LOGLEVEL } = require('homey-telemetrycollector-api');
+
 const BaseDevice = require('./device');
 
 const QUEUE_MAX = 100;
@@ -42,6 +44,15 @@ module.exports = class LogDevice extends BaseDevice {
 
   sendLog(log) {
     throw Error('Subclass responsibility');
+  }
+
+  sendToTarget(log) {
+    // Settings: Send logs to the target in debug mode
+    if (log.metadata.debugMode && !this.settings.logOnDebugMode) return false
+    // Settings: Debug.Log activated
+    if (log.level === TELCO_LOGLEVEL.DEBUG && !this.settings.debugLogActivated) return false
+
+    return true
   }
 
   async #addToLogQueue(log) {

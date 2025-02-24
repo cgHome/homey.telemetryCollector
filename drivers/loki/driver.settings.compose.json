@@ -20,6 +20,17 @@
           "en": "Automatically deactivate Debug.Log on startup"
         },
         "value": true
+      },
+      {
+        "id": "logOnDebugMode",
+        "type": "checkbox",
+        "label": {
+          "en": "Send logs in debug mode to the target"
+        },
+        "value": false,
+        "hint": {
+          "en": "ATTENTION: These settings are ONLY relevant during development."
+        }
       }
     ]
   },

@@ -2,8 +2,6 @@
 
 // const Homey = require('homey');
 
-const { TELCO_LOGLEVEL } = require('homey-telemetrycollector-api');
-
 const logsAPI = require('@opentelemetry/api-logs');
 const { LoggerProvider, BatchLogRecordProcessor, ConsoleLogRecordExporter } = require('@opentelemetry/sdk-logs');
 const { Resource } = require('@opentelemetry/resources');
@@ -69,7 +67,9 @@ module.exports = class OtelLogAdapter extends LogDevice {
   }
 
   sendLog(log) {
-    if (log.level === TELCO_LOGLEVEL.DEBUG && !this.settings.debugLogActivated) return;
+    if (!this.sendToTarget(log)) return
+
+    delete log.metadata.debugMode;
 
     this.logger.log({
       level: log.level,

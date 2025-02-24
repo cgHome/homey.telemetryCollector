@@ -4,14 +4,9 @@
 
 // const Homey = require('homey');
 
-const { TELCO_LOGLEVEL } = require('homey-telemetrycollector-api');
-
-/* eslint-disable import/no-extraneous-dependencies */
-// eslint-disable-next-line node/no-extraneous-require
 const { Produce } = require('glossy');
 
 const winston = require('winston');
-// eslint-disable-next-line no-unused-expressions
 require('winston-syslog').Syslog;
 
 const LogDevice = require('../logDevice');
@@ -60,7 +55,9 @@ module.exports = class SyslogAdapter extends LogDevice {
   }
 
   sendLog(log) {
-    if (log.level === TELCO_LOGLEVEL.DEBUG && !this.settings.debugLogActivated) return;
+    if (!this.sendToTarget(log)) return
+
+    delete log.metadata.debugMode;
 
     this.logger.log(log.level, {
       severity: log.level,

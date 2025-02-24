@@ -16,6 +16,20 @@
   "category": [
     "tools"
   ],
+  "tags": {
+    "en": [
+      "logger",
+      "monitoring",
+      "TelCo",
+      "OTel",
+      "OpenTelemetry",
+      "Grafana",
+      "Alloy",
+      "Loki",
+      "Syslog",
+      "SimpleSysLog"
+    ]
+  },
   "permissions": [
     "homey:manager:api",
     "homey:app:org.cflat-inc.telemetryCollector",
@@ -176,6 +190,17 @@
                 "en": "Automatically deactivate Debug.Log on startup"
               },
               "value": true
+            },
+            {
+              "id": "logOnDebugMode",
+              "type": "checkbox",
+              "label": {
+                "en": "Send logs in debug mode to the target"
+              },
+              "value": false,
+              "hint": {
+                "en": "ATTENTION: These settings are ONLY relevant during development."
+              }
             }
           ]
         },
@@ -273,6 +298,17 @@
                 "en": "Automatically deactivate Debug.Log on startup"
               },
               "value": true
+            },
+            {
+              "id": "logOnDebugMode",
+              "type": "checkbox",
+              "label": {
+                "en": "Send logs in debug mode to the target"
+              },
+              "value": false,
+              "hint": {
+                "en": "ATTENTION: These settings are ONLY relevant during development."
+              }
             }
           ]
         },
@@ -357,6 +393,17 @@
                 "en": "Automatically deactivate Debug.Log on startup"
               },
               "value": true
+            },
+            {
+              "id": "logOnDebugMode",
+              "type": "checkbox",
+              "label": {
+                "en": "Send logs in debug mode to the target"
+              },
+              "value": false,
+              "hint": {
+                "en": "ATTENTION: These settings are ONLY relevant during development."
+              }
             }
           ]
         }
@@ -407,6 +454,17 @@
                 "en": "Automatically deactivate Debug.Log on startup"
               },
               "value": true
+            },
+            {
+              "id": "logOnDebugMode",
+              "type": "checkbox",
+              "label": {
+                "en": "Send logs in debug mode to the target"
+              },
+              "value": false,
+              "hint": {
+                "en": "ATTENTION: These settings are ONLY relevant during development."
+              }
             }
           ]
         },

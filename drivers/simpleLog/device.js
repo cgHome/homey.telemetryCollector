@@ -4,7 +4,7 @@
 
 const { TELCO_LOGLEVEL } = require('homey-telemetrycollector-api');
 
-const SimpleLogAppApi = require('../../lib/simpleLogAppApi');
+const SimpleLogAppApi = require('../../lib/simpleLogAppApi')
 
 const LogDevice = require('../logDevice');
 
@@ -17,20 +17,22 @@ const SEVERITY = Object.freeze({
   [TELCO_LOGLEVEL.NOTICE]: 5,
   [TELCO_LOGLEVEL.INFO]: 6,
   [TELCO_LOGLEVEL.DEBUG]: 7,
-});
+})
 
 module.exports = class SimpleLogAdapter extends LogDevice {
 
   async onInit() {
-    super.onInit();
+    super.onInit()
   }
 
   async isConnected() {
-    return true;
+    return true
   }
 
   async sendLog(log) {
-    if (log.level === TELCO_LOGLEVEL.DEBUG && !this.settings.debugLogActivated) return;
+    if (!this.sendToTarget(log)) return
+
+    delete log.metadata.debugMode;
 
     const data = {
       timestamp: log.timestamp,
@@ -43,7 +45,7 @@ module.exports = class SimpleLogAdapter extends LogDevice {
     // Send log to TelemetryCollectorApp
     await SimpleLogAppApi.getInstance(this.homey)
       .put('addLog', data)
-      .catch((error) => this.error(error));
+      .catch((error) => this.error(error))
   }
 
 };

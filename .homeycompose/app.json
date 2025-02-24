@@ -15,6 +15,20 @@
   "category": [
     "tools"
   ],
+  "tags": {
+    "en": [
+      "logger",
+      "monitoring",
+      "TelCo",
+      "OTel",
+      "OpenTelemetry",
+      "Grafana",
+      "Alloy",
+      "Loki",
+      "Syslog",
+      "SimpleSysLog"
+    ]
+  },
   "permissions": [
     "homey:manager:api",
     "homey:app:org.cflat-inc.telemetryCollector",

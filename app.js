@@ -15,7 +15,6 @@ if (process.env.DEBUG === '1') {
 }
 
 // Install the TelemetryCollector Api
-// eslint-disable-next-line no-unused-expressions, node/no-extraneous-require
 require('homey-telemetrycollector-api').install;
 
 // Mixin Pattern
@@ -41,7 +40,7 @@ module.exports = class TelemetryCollectorApp extends Homey.App {
       level: args.level,
       message: args.message,
       metadata: {
-        app: args.app ? args.app : '[none]',
+        app: args.app ? args.app : '-',
         facility: 16,
         facilityName: 'Flow',
       },
