@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "org.cflat-inc.telemetryCollector",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "compatibility": ">=12.3.0",
   "sdk": 3,
   "platforms": [
@@ -152,11 +152,20 @@
   },
   "drivers": [
     {
-      "name": {
-        "en": "Grafana Loki Adapter"
-      },
       "class": "service",
       "capabilities": [],
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "lan"
+      ],
+      "icon": "/drivers/loki/assets/icon.svg",
+      "images": {
+        "small": "/drivers/loki/assets/images/small.jpg",
+        "large": "/drivers/loki/assets/images/large.jpg",
+        "xlarge": "/drivers/loki/assets/images/xlarge.jpg"
+      },
       "pair": [
         {
           "id": "list_devices",
@@ -173,6 +182,9 @@
           "template": "add_devices"
         }
       ],
+      "name": {
+        "en": "Grafana Loki Adapter"
+      },
       "id": "loki",
       "settings": [
         {
@@ -259,12 +271,20 @@
       ]
     },
     {
-      "deprecated": true,
-      "name": {
-        "en": "OTel-Log Adapter"
-      },
       "class": "service",
       "capabilities": [],
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "lan"
+      ],
+      "icon": "/drivers/otelLog/assets/icon.svg",
+      "images": {
+        "small": "/drivers/otelLog/assets/images/small.jpg",
+        "large": "/drivers/otelLog/assets/images/large.jpg",
+        "xlarge": "/drivers/otelLog/assets/images/xlarge.jpg"
+      },
       "pair": [
         {
           "id": "list_devices",
@@ -281,6 +301,10 @@
           "template": "add_devices"
         }
       ],
+      "deprecated": true,
+      "name": {
+        "en": "OTel-Log Adapter"
+      },
       "id": "otelLog",
       "settings": [
         {
@@ -355,11 +379,20 @@
       ]
     },
     {
-      "name": {
-        "en": "SimpleSysLog Adapter"
-      },
       "class": "service",
       "capabilities": [],
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "lan"
+      ],
+      "icon": "/drivers/simpleLog/assets/icon.svg",
+      "images": {
+        "small": "/drivers/simpleLog/assets/images/small.jpg",
+        "large": "/drivers/simpleLog/assets/images/large.jpg",
+        "xlarge": "/drivers/simpleLog/assets/images/xlarge.jpg"
+      },
       "pair": [
         {
           "id": "list_devices",
@@ -376,6 +409,9 @@
           "template": "add_devices"
         }
       ],
+      "name": {
+        "en": "SimpleSysLog Adapter"
+      },
       "id": "simpleLog",
       "settings": [
         {
@@ -416,11 +452,20 @@
       ]
     },
     {
-      "name": {
-        "en": "Syslog Adapter"
-      },
       "class": "service",
       "capabilities": [],
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "lan"
+      ],
+      "icon": "/drivers/syslog/assets/icon.svg",
+      "images": {
+        "small": "/drivers/syslog/assets/images/small.jpg",
+        "large": "/drivers/syslog/assets/images/large.jpg",
+        "xlarge": "/drivers/syslog/assets/images/xlarge.jpg"
+      },
       "pair": [
         {
           "id": "list_devices",
@@ -437,6 +482,9 @@
           "template": "add_devices"
         }
       ],
+      "name": {
+        "en": "Syslog Adapter"
+      },
       "id": "syslog",
       "settings": [
         {
