@@ -1,0 +1,3 @@
+Remark:
+- I have to use the HomeyAPI because I use the getSystemName() method (see: app.js > col:36).
+- For the SimpleSysLog App Adapter/Device I use a HomeyPro image because it is a Homey App.  

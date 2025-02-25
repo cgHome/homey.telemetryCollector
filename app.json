@@ -45,6 +45,12 @@
     "name": "Chris Gross",
     "email": "cghome@gmx.net"
   },
+  "homeyCommunityTopicId": 131546,
+  "support": "https://community.athom.com/t/131546",
+  "source": "https://github.com/cgHome/homey.telemetryCollector",
+  "bugs": {
+    "url": "https://github.com/cgHome/homey.telemetryCollector/issues"
+  },
   "api": {
     "addLog": {
       "method": "PUT",
