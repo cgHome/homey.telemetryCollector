@@ -3,6 +3,8 @@
 const Homey = require('homey');
 const { HomeyAPI } = require('homey-api');
 
+const crypto = require('node:crypto');
+
 // Development
 const inspector = require('node:inspector');
 
@@ -40,6 +42,7 @@ module.exports = class TelemetryCollectorApp extends Homey.App {
       level: args.level,
       message: args.message,
       metadata: {
+        id: crypto.randomUUID(),
         app: args.app ? args.app : '-',
         facility: 16,
         facilityName: 'Flow',
