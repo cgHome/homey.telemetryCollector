@@ -33,7 +33,7 @@ module.exports = class LokiAdapter extends LogDevice {
         new LokiTransport({
           host: `http://${this.settings.endpoint}:${this.settings.port}`,
           json: true,
-          onConnectionError: (err) => this.error(err),
+          onConnectionError: (err) => this.logError(err),
         }),
       ],
     });

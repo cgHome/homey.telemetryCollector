@@ -7,7 +7,7 @@
     "local"
   ],
   "name": {
-    "en": "Telemetry Collector"
+    "en": "TelemetryCollector"
   },
   "description": {
     "en": "Setup and collect telemetry in minutes!"

@@ -1,4 +1,13 @@
-# Telemetry Collector
+# TelemetryCollector
+
+## Server
+
+### Grafana
+
+- https://grafana.com/docs/grafana/latest/fundamentals/exemplars/
+
+- https://grafana.com/blog/2023/12/20/the-concise-guide-to-grafana-loki-everything-you-need-to-know-about-labels/
+- https://grafana.com/docs/loki/latest/get-started/labels/bp-labels/
 
 ## Adapter
 

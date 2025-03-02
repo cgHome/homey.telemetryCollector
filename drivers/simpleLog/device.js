@@ -45,7 +45,7 @@ module.exports = class SimpleLogAdapter extends LogDevice {
     // Send log to TelemetryCollectorApp
     await SimpleLogAppApi.getInstance(this.homey)
       .put('addLog', data)
-      .catch((error) => this.error(error))
+      .catch((error) => this.logError(error))
   }
 
 };

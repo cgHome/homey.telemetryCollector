@@ -56,7 +56,7 @@ module.exports = class OtelLogAdapter extends LogDevice {
       transports: [
         // new winston.transports.Console(),
         new OpenTelemetryTransportV3({
-          onConnectionError: (err) => this.error(err),
+          onConnectionError: (err) => this.logError(err),
         }),
       ],
     });

@@ -16,7 +16,7 @@ if (process.env.DEBUG === '1') {
   }
 }
 
-// Install the TelemetryCollector Api
+// Install the TelemetryCollector-Api
 require('homey-telemetrycollector-api').install;
 
 // Mixin Pattern
@@ -25,6 +25,11 @@ Object.assign(Homey.SimpleClass.prototype, {
     return process.env.DEBUG === '1';
   },
 });
+
+// Prevent endless loop
+Homey.SimpleClass.logError = function (message) {
+  this.error(message);
+};
 
 module.exports = class TelemetryCollectorApp extends Homey.App {
 
