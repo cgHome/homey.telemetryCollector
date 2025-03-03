@@ -16,9 +16,6 @@ if (process.env.DEBUG === '1') {
   }
 }
 
-// Install the TelemetryCollector-Api
-require('homey-telemetrycollector-api').install;
-
 // Mixin Pattern
 Object.assign(Homey.SimpleClass.prototype, {
   isDebugModeOn() {
@@ -26,8 +23,11 @@ Object.assign(Homey.SimpleClass.prototype, {
   },
 });
 
+// Install the TelemetryCollector-Api
+require('homey-telemetrycollector-api').install;
+
 // Prevent endless loop
-Homey.SimpleClass.logError = function (message) {
+Homey.SimpleClass.prototype.logError = function (message) {
   this.error(message);
 };
 

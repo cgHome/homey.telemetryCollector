@@ -1,3 +1,25 @@
+
+Reviewer
+Dear Chris Gross,
+
+Thank you for submitting your app Telemetry Collector for review.
+
+It looks great, so we have gone ahead and approved your submission.
+
+However to make your App Store page even better, we have a (few) small point(s) of feedback:
+
+— The usage of the Homey Pro driver image is not allowed in the app. I would suggest using the app logo  that is used in Homey and the website (the dot, traingle and square). Or create an image of the Icon you used for this driver. 
+
+Please implement the given feedback in your next update, to make the most out of your App Store page.
+
+-----
+
 Remark:
-- I have to use the HomeyAPI because I use the getSystemName() method (see: app.js > col:36).
-- For the SimpleSysLog App Adapter/Device I use a HomeyPro image because it is a Homey App.  
+Hi Reviewer,
+
+As you suggested, I have now made icon images with each icon, and honestly, it looks much better.
+
+THX and have a great start to the week, 
+
+Chris 
+
